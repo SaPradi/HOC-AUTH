@@ -2,18 +2,23 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './pages/Login';
-import Guard from './hoc/Guard';
+import withAuthProtection from './hoc/withAuthProtection';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
+import withPageTracking from './hoc/withPageTracking';
 
-const App =() =>{
+
+const ProtectedDashboard = withAuthProtection(Dashboard);
+const TrackedPage = withPageTracking(Home)
+
+const App:React.FC = () =>{
 
   return (
 
       <Routes>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/' element={<TrackedPage pageName='home'/>}/>
         <Route path='/login' element={<Login/>}/>
-        <Route path='/dashboard' element={<Guard element={Dashboard}/>}/>
+        <Route path='/dashboard' element={<ProtectedDashboard/>}/>
     </Routes>
 
   )

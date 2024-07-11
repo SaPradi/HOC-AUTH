@@ -1,5 +1,6 @@
 import './styles/home.css'
-const Home = () =>{
+
+const Home:React.FC = () =>{
 
 
     return (

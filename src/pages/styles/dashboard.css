@@ -1,0 +1,13 @@
+.dashboard{
+    background-color: #ccccff;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    gap: 1rem;
+
+}
+.hocs{
+    display: flex;
+    gap: 1rem;
+}

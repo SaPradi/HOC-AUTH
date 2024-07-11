@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './styles/home.css'
 
 const Home:React.FC = () =>{
@@ -9,7 +10,7 @@ const Home:React.FC = () =>{
                 <p>Welcome to <span>Test Web</span></p>
                 <img src="src/assets/cat.png" alt="" />
             </div>
-            <button> <a href="/dashboard">GO</a>  </button>
+            <button> <Link to='/dashboard'>GO</Link> </button>
            
         </div>
     )
